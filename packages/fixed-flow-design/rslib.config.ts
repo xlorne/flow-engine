@@ -18,5 +18,5 @@ export default defineConfig({
   output: {
     target: 'web',
   },
-  plugins: [pluginReact(),pluginLess()],
+  plugins: [pluginReact(), pluginLess()],
 });
