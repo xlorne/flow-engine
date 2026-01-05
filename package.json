@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ui-design": "pnpm -F @flow-engine/ui-design dev"
+    "build:flow-design": "pnpm -F @flow-engine/flow-design build",
+    "dev:ui-design": "pnpm -F @flow-engine/ui-design dev"
   },
   "keywords": [],
   "author": "",

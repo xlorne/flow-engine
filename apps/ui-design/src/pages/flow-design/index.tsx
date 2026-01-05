@@ -8,7 +8,10 @@ const FlowDesign: React.FC = () => {
     console.log(state);
 
     return (
-        <Workflow />
+        <>
+            <Workflow />
+        </>
+
     );
 };
 

@@ -19,11 +19,9 @@ export const Editor = () => {
   const editorProps = useEditorProps(initialData, FlowNodeRegistries);
 
   return (
-    <div className="doc-feature-overview">
-      <FixedLayoutEditorProvider {...editorProps}>
-        <EditorRenderer />
-        <DemoTools />
-      </FixedLayoutEditorProvider>
-    </div>
+    <FixedLayoutEditorProvider {...editorProps}>
+      <EditorRenderer />
+      <DemoTools />
+    </FixedLayoutEditorProvider>
   );
 };

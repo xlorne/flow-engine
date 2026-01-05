@@ -3,7 +3,9 @@ import React from 'react';
 
 const FlowDesign: React.FC = () => {
     return (
-        <Editor/>
+        <div style={{ height: 'calc(100vh - 100px)' }}>
+            <Editor />
+        </div>
     );
 };
 
