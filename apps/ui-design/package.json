@@ -9,6 +9,7 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^6.1.0",
     "@flow-engine/fixed-flow-design": "workspace:*",
     "@flow-engine/free-flow-design": "workspace:*",
     "@flow-engine/utils": "workspace:*",
