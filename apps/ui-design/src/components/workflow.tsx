@@ -1,5 +1,5 @@
-import { Tabs, Button, Space, Flex, Steps } from 'antd';
-import { SaveOutlined, DeleteOutlined, ReloadOutlined } from '@ant-design/icons';
+import { Tabs, Button, Space, Flex } from 'antd';
+import { SaveOutlined } from '@ant-design/icons';
 import React, { useState } from 'react';
 
 import FlowDesign from './flow';

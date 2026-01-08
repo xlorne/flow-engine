@@ -6,6 +6,7 @@
   "scripts": {
     "build:fiexd-flow-design": "pnpm -F @flow-engine/fixed-flow-design build",
     "build:free-flow-design": "pnpm -F @flow-engine/free-flow-design build",
+    "build:flow-design": "pnpm -F @flow-engine/flow-design build",
     "dev:ui-design": "pnpm -F @flow-engine/ui-design dev"
   },
   "keywords": [],
