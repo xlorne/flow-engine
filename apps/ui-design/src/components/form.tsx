@@ -1,4 +1,4 @@
-import { Button, Flex, Space, Table, type TableProps } from 'antd';
+import { Button, Divider, Flex, Space, Table, Tabs, type TableProps, type TabsProps } from 'antd';
 import React from 'react';
 
 const FormDesign: React.FC = () => {
@@ -20,6 +20,11 @@ const FormDesign: React.FC = () => {
             dataIndex: 'columnType'
         },
         {
+            key: 'displayType',
+            title: '渲染方式',
+            dataIndex: 'displayType'
+        },
+        {
             key: 'action',
             title: '操作',
             render: (_: any, record: any) => {
@@ -37,35 +42,85 @@ const FormDesign: React.FC = () => {
         {
             id: 1,
             columnName: 'id',
-            columnType: 'Long'
+            columnType: 'Long',
+            displayType: '整数'
         },
         {
             id: 2,
             columnName: 'name',
-            columnType: 'String'
+            columnType: 'String',
+            displayType: '文本'
         },
         {
             id: 3,
             columnName: 'age',
-            columnType: 'Interge'
-        }
+            columnType: 'Interge',
+            displayType: '整数'
+        },
+    
     ]
 
-    return (
-        <>
-            <Flex justify='end'>
-                <Button type='primary'>添加字段</Button>
-            </Flex>
+    const FormTable = (props:{header:boolean}) => {
+        const showHeader = props.header || false;
+        return (
             <Table
                 title={() => {
-                    return (
-                        <>用户表(user)</>
-                    )
+                    if(showHeader){
+                        return (
+                            <Flex justify='start'>
+                                主表字段(Test)
+                            </Flex>
+                        )
+                    }
                 }}
                 columns={columns}
                 dataSource={datasources}
             />
-        </>
+        )
+    }
+
+    const items: TabsProps['items'] = [
+        {
+            key: '1',
+            label: '子表1(test1)',
+            children: <FormTable header={false}/>,
+        },
+        {
+            key: '2',
+            label: '子表2(test2)',
+            children: <FormTable header={false}/>,
+        },
+        {
+            key: '3',
+            label: '子表3(test3)',
+            children: <FormTable header={false}/>,
+        },
+    ];
+  
+
+    return (
+        <div style={{ padding: '24px', height: '100%', overflowY: 'auto' }}>
+            <Flex justify='center'
+                style={{
+                    marginLeft: '20%',
+                    marginRight: '20%',
+                }}
+            >
+                <div style={{ width: '100%' }}>
+                    <Flex justify='end'>
+                        <Button type='primary'>添加字段</Button>
+                    </Flex>
+                    <FormTable header={true}/>
+                    <Divider/>
+                    <Flex justify='end' style={{marginBottom:10}}>
+                        <Button type='primary'>添加字表</Button>
+                    </Flex>
+                    <Tabs
+                        items={items}
+                    />
+                </div>
+            </Flex>
+        </div>
     );
 };
 
