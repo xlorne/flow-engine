@@ -1,10 +1,11 @@
-import { Tabs, Button, Space, Flex } from 'antd';
+import { Tabs, Button, Space, Flex, Steps } from 'antd';
 import { SaveOutlined, DeleteOutlined, ReloadOutlined } from '@ant-design/icons';
 import React, { useState } from 'react';
 
 import FlowDesign from './flow';
 import FormDesign from './form';
 import Setting from './setting';
+import Base from './base';
 import { message } from 'antd';
 
 const Workflow: React.FC = () => {
@@ -19,20 +20,12 @@ const Workflow: React.FC = () => {
         }, 1000);
     };
 
-    const handleReset = () => {
-        message.info('已重置为默认配置');
-    };
-
-    const handleDelete = () => {
-        // 这里可以添加确认对话框
-        message.warning('删除功能待实现');
-    };
 
     const items = [
         {
-            key: 'setting',
-            label: '参数设置',
-            children: <Setting />,
+            key: 'base',
+            label: '基本信息',
+            children: <Base />,
         },
         {
             key: 'form',
@@ -44,16 +37,15 @@ const Workflow: React.FC = () => {
             label: '流程设计',
             children: <FlowDesign />,
         },
+        {
+            key: 'setting',
+            label: '更多参数',
+            children: <Setting />,
+        },
     ];
 
     const tabBarExtraContent = (
-        <Space size="small">
-            <Button
-                icon={<ReloadOutlined />}
-                onClick={handleReset}
-            >
-                重置
-            </Button>
+        <Space>
             <Button
                 icon={<SaveOutlined />}
                 type="primary"
@@ -62,13 +54,6 @@ const Workflow: React.FC = () => {
             >
                 保存
             </Button>
-            <Button
-                icon={<DeleteOutlined />}
-                danger
-                onClick={handleDelete}
-            >
-                删除
-            </Button>
         </Space>
     );
 
@@ -76,10 +61,12 @@ const Workflow: React.FC = () => {
         <Flex vertical style={{ height: '100%' }}>
             <Tabs
                 items={items}
+                centered={true}
                 style={{ flex: 1 }}
                 tabBarStyle={{ marginBottom: 0 }}
                 tabBarExtraContent={tabBarExtraContent}
             />
+
         </Flex>
     );
 };
