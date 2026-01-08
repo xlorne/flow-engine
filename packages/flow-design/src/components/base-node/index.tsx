@@ -9,7 +9,7 @@ import { usePanelManager } from '@flowgram.ai/panel-manager-plugin';
 import { useNodeRender } from '@flowgram.ai/fixed-layout-editor';
 import { ConfigProvider } from '@douyinfe/semi-ui';
 
-import { NodeRenderContext } from '../../context';
+import { NodeRenderContext, IsSidebarContext } from '../../context';
 import { BaseNodeStyle, ErrorIcon } from './styles';
 import { nodeFormPanelFactory } from '../sidebar';
 
@@ -36,8 +36,9 @@ export const BaseNode = () => {
 
   return (
     <ConfigProvider getPopupContainer={getPopupContainer}>
-      {form?.state.invalid && <ErrorIcon />}
-      <BaseNodeStyle
+      <IsSidebarContext.Provider value={false}>
+        {form?.state.invalid && <ErrorIcon />}
+        <BaseNodeStyle
         /*
          * onMouseEnter is added to a fixed layout node primarily to listen for hover highlighting of branch lines
          * onMouseEnter 加到固定布局节点主要是为了监听 分支线条的 hover 高亮
@@ -70,6 +71,7 @@ export const BaseNode = () => {
       >
         <NodeRenderContext.Provider value={nodeRender}>{form?.render()}</NodeRenderContext.Provider>
       </BaseNodeStyle>
+      </IsSidebarContext.Provider>
     </ConfigProvider>
   );
 };

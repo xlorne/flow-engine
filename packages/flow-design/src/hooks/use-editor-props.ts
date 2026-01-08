@@ -66,8 +66,8 @@ export function useFlowEditorProps(
         components: {
           ...defaultFixedSemiMaterials,
           [FlowRendererKey.ADDER]: NodeAdder,
-          renderDefaultNode: BaseNode,
         },
+        renderDefaultNode: BaseNode,
       },
       scroll: {
         enableScrollLimit: true,

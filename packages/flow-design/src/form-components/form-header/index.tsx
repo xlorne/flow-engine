@@ -14,18 +14,18 @@ export const FormHeader: React.FC = () => {
     const nodeRegistry = node?.getNodeRegistry();
     const icon = nodeRegistry?.info.icon;
 
+    // Get title directly from node data
+    const title = node?.data?.title || nodeRegistry?.type || 'Node';
+
     // In canvas mode, show simplified title with icon
-    if (!isSidebar) {
+    // Handle both false and undefined for canvas mode
+    if (isSidebar !== true) {
       return (
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', width: '100%' }}>
-          {icon && <div dangerouslySetInnerHTML={{ __html: icon }} style={{ width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }} />}
-          <Field name="title">
-            {({ field }) => (
-              <div style={{ flex: 1, fontSize: '14px', fontWeight: 500, color: '#333', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                {String(field.value || nodeRegistry?.type || 'Node')}
-              </div>
-            )}
-          </Field>
+          {icon && <img src={icon} alt="" style={{ width: '28px', height: '28px', flexShrink: 0 }} />}
+          <div style={{ flex: 1, fontSize: '14px', fontWeight: 500, color: '#333', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            {String(title)}
+          </div>
         </div>
       );
     }

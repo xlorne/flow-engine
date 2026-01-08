@@ -47,10 +47,20 @@ const NodesWrap = styled.div`
 export function NodeList(props: { onSelect: (meta: any) => void; from: FlowNodeEntity }) {
   const context = useClientContext();
 
-  // 过滤出可添加的节点类型（排除 start，因为只能有一个开始节点）
-  const availableRegistries = FlowNodeRegistries.filter(
-    (registry) => !registry.meta?.addDisable && registry.type !== 'start'
-  );
+  // 过滤出可添加的节点类型
+  // 1. 排除 start 节点（只能有一个开始节点）
+  // 2. 排除 addDisable 为 true 的节点
+  const availableRegistries = FlowNodeRegistries.filter((registry) => {
+    // 明确排除 start 类型
+    if (String(registry.type) === 'start') {
+      return false;
+    }
+    // 排除标记为 addDisable 的节点
+    if (registry.meta?.addDisable) {
+      return false;
+    }
+    return true;
+  });
 
   const handleClick = (registry: FlowNodeRegistry) => {
     const addProps = registry.onAdd?.(context, props.from);
