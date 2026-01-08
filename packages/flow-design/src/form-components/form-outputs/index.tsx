@@ -4,9 +4,17 @@
  */
 
 import { Field } from '@flowgram.ai/fixed-layout-editor';
+import { useIsSidebar } from '../../hooks';
 import type { JsonSchema } from '../../typings';
 
 export const FormOutputs: React.FC = () => {
+  const isSidebar = useIsSidebar();
+
+  // Only show outputs in sidebar mode
+  if (!isSidebar) {
+    return null;
+  }
+
   return (
     <Field<JsonSchema> name="outputs">
       {({ field }) => {

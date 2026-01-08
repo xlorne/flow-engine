@@ -4,58 +4,35 @@
  */
 
 import styled from 'styled-components';
+import { IconInfoCircle } from '@douyinfe/semi-icons';
 
 export const BaseNodeStyle = styled.div`
-  position: relative;
+  align-items: flex-start;
+  background-color: #fff;
+  border: 1px solid rgba(6, 7, 9, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.04), 0 4px 12px 0 rgba(0, 0, 0, 0.02);
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background: #fff;
-  border: 1px solid #d9d9d9;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover {
-    border-color: #1890ff;
-    box-shadow: 0 2px 8px rgba(24, 144, 255, 0.15);
-  }
-
-  &.activated {
-    border-color: #1890ff;
-    background: #e6f7ff;
-  }
-`;
-
-export const NodeIcon = styled.div`
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  flex-shrink: 0;
+  position: relative;
+  width: 360px;
+  cursor: default;
+  &.activated {
+    border: 1px solid #82a7fc;
+  }
 `;
 
-export const NodeContent = styled.div`
-  flex: 1;
-  min-width: 0;
-`;
-
-export const NodeTitle = styled.div`
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
-
-export const NodeDescription = styled.div`
-  font-size: 12px;
-  color: #999;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-top: 2px;
-`;
+export const ErrorIcon = () => (
+  <IconInfoCircle
+    style={{
+      position: 'absolute',
+      color: 'red',
+      left: -6,
+      top: -6,
+      zIndex: 1,
+      background: 'white',
+      borderRadius: 8,
+    }}
+  />
+);

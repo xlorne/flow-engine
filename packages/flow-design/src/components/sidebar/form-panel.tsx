@@ -9,12 +9,34 @@ import {
   PlaygroundEntityContext,
   useRefresh,
   useClientContext,
+  useNodeRender,
 } from '@flowgram.ai/fixed-layout-editor';
 
 import { FlowNodeMeta } from '../../typings';
+import { IsSidebarContext, NodeRenderContext } from '../../context';
 
 export interface NodeFormPanelProps {
   nodeId: string;
+}
+
+export function SidebarNodeRenderer({ node }: { node: ReturnType<typeof useNodeRender>['node'] }) {
+  const nodeRender = useNodeRender(node);
+
+  return (
+    <NodeRenderContext.Provider value={nodeRender}>
+      <div
+        style={{
+          background: 'rgb(251, 251, 251)',
+          height: '100%',
+          borderRadius: 8,
+          border: '1px solid rgba(82,100,154, 0.13)',
+          boxSizing: 'border-box',
+        }}
+      >
+        {nodeRender.form?.render()}
+      </div>
+    </NodeRenderContext.Provider>
+  );
 }
 
 export function SidebarRenderer({ nodeId }: NodeFormPanelProps) {
@@ -64,16 +86,12 @@ export function SidebarRenderer({ nodeId }: NodeFormPanelProps) {
     return null;
   }
 
-  const title = node.getNodeRegistry().type;
-
   return (
-    <PlaygroundEntityContext.Provider key={node.id} value={node}>
-      <div style={{ padding: '16px' }}>
-        <h3 style={{ margin: '0 0 16px 0', fontSize: '14px', fontWeight: 500 }}>
-          {String(title)}
-        </h3>
-      </div>
-    </PlaygroundEntityContext.Provider>
+    <IsSidebarContext.Provider value={true}>
+      <PlaygroundEntityContext.Provider key={node.id} value={node}>
+        <SidebarNodeRenderer node={node} />
+      </PlaygroundEntityContext.Provider>
+    </IsSidebarContext.Provider>
   );
 }
 

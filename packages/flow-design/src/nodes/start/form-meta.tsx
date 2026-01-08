@@ -3,19 +3,24 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { FormMeta } from '@flowgram.ai/fixed-layout-editor';
+import { FormMeta, ValidateTrigger } from '@flowgram.ai/fixed-layout-editor';
 import { FormHeader, FormContent, FormInputs, FormOutputs } from '../../form-components';
 
-const renderForm = () => (
-  <>
-    <FormHeader />
-    <FormContent>
-      <FormInputs />
-      <FormOutputs />
-    </FormContent>
-  </>
-);
+const renderForm = () => {
+  // Canvas rendering (simplified view) - just header
+  // Sidebar rendering (full form) - header + inputs + outputs
+  return (
+    <>
+      <FormHeader />
+      <FormContent>
+        <FormInputs />
+        <FormOutputs />
+      </FormContent>
+    </>
+  );
+};
 
 export const formMeta: FormMeta = {
   render: renderForm,
+  validateTrigger: ValidateTrigger.onChange,
 };
