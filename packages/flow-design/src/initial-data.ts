@@ -13,37 +13,40 @@ export const initialData: FlowDocumentJSON = {
       data: {
         title: '开始',
       },
-      blocks: [
-        {
-          id: 'branch_01',
-          blocks: [
-            {
-              id: 'process_01',
-              type: 'process',
-              data: {
-                title: '流程节点',
-                description: '请填写流程描述',
-              },
-              blocks: [],
+    },
+    {
+      id: 'process_01',
+      type: 'process',
+      data: {
+        title: '流程节点',
+        description: '请填写流程描述',
+      },
+      blocks: [],
+    },
+    {
+      id: 'cc_01',
+      type: 'cc',
+      data: {
+        title: '抄送节点',
+        ccUsers: 'user1@example.com,user2@example.com',
+        message: '请查阅相关流程信息',
+      },
+      blocks: [],
+    },
+    {
+      id: 'end_01',
+      type: 'end',
+      data: {
+        title: '结束',
+        outputs: {
+          type: 'object',
+          properties: {
+            result: {
+              type: 'string',
             },
-            {
-              id: 'end_01',
-              type: 'end',
-              data: {
-                title: '结束',
-                outputs: {
-                  type: 'object',
-                  properties: {
-                    result: {
-                      type: 'string',
-                    },
-                  },
-                },
-              },
-            },
-          ],
+          },
         },
-      ],
+      },
     },
   ],
 };
