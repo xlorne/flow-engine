@@ -36,39 +36,39 @@ export default function NodeAdder(props: {
 
   return (
     <Popover
-      visible={visible}
-      onVisibleChange={setVisible}
-      content={<NodeList onSelect={add} from={from} />}
-      placement="right"
-      trigger="click"
-      popupAlign={{ offset: [30, 0] }}
-      overlayStyle={{ padding: 0 }}
+    visible={visible}
+    onVisibleChange={setVisible}
+    content={<NodeList onSelect={add} from={from} />}
+    placement="right"
+    trigger="click"
+    popupAlign={{ offset: [30, 0] }}
+    overlayStyle={{ padding: 0 }}
+  >
+    <Wrap
+      style={
+        props.hoverActivated
+          ? {
+            width: 24,
+            height: 24,
+          }
+          : {}
+      }
+      onMouseDown={(e) => e.stopPropagation()}
     >
-      <Wrap
-        style={
-          props.hoverActivated
-            ? {
-                width: 24,
-                height: 24,
-              }
-            : {}
-        }
-        onMouseDown={(e) => e.stopPropagation()}
-      >
-        {props.hoverActivated ? (
-          <IconPlusCircle
-            onClick={() => {
-              setVisible(true);
-            }}
-            style={{
-              backgroundColor: '#fff',
-              color: '#1890ff',
-              borderRadius: 12,
-              fontSize: 20,
-            }}
-          />
-        ) : null}
-      </Wrap>
-    </Popover>
+      {props.hoverActivated ? (
+        <IconPlusCircle
+          onClick={() => {
+            setVisible(true);
+          }}
+          style={{
+            backgroundColor: '#fff',
+            color: '#1890ff',
+            borderRadius: 12,
+            fontSize: 20,
+          }}
+        />
+      ) : null}
+    </Wrap>
+  </Popover>
   );
 }

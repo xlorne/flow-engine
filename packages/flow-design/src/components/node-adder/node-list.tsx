@@ -76,6 +76,8 @@ export function NodeList(props: { onSelect: (meta: any) => void; from: FlowNodeE
         return <IconCC style={{ width: 24, height: 24 }} />;
       case 'end':
         return <div style={{ width: 24, height: 24 }}>🔴</div>;
+      case 'condition':
+        return <div style={{ width: 24, height: 24 }}>🔀</div>;
       default:
         return <div style={{ width: 24, height: 24 }}>📦</div>;
     }
@@ -90,6 +92,8 @@ export function NodeList(props: { onSelect: (meta: any) => void; from: FlowNodeE
         return '抄送节点';
       case 'end':
         return '结束节点';
+      case 'condition':
+        return '条件分支';
       default:
         return typeStr;
     }

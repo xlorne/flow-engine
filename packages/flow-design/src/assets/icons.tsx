@@ -70,3 +70,40 @@ export const iconEndBase64 = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhl
 export const iconProcessBase64 = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB4PSI0IiB5PSI4IiB3aWR0aD0iMzIiIGhlaWdodD0iMjQiIHJ4PSI0IiBmaWxsPSIjMTg5MEZGIiBmaWxsT3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjMTg5MEZGIiBzdHJva2Utd2lkdGg9IjIiIC8+CiAgPHBhdGggZD0iTTEyIDE2SDI4TTEyIDIwSDI0TDEyIDI0SDIwIiBzdHJva2U9IiMxODkwRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPgo8L3N2Zz4=';
 
 export const iconCCBase64 = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB4PSI0IiB5PSI4IiB3aWR0aD0iMzIiIGhlaWdodD0iMjQiIHJ4PSI0IiBmaWxsPSIjRkFBRDE0IiBmaWxsT3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjRkFBRDE0IiBzdHJva2Utd2lkdGg9IjIiIC8+CiAgPHBhdGggZD0iTTE0IDIwQzE0IDE3Ljc5IDE1Ljc5IDE2IDE4IDE2QzIwLjIxIDE2IDIyIDE3Ljc5IDIyIDIwQzIyIDIyLjIxIDIwLjIxIDI0IDE4IDI0IiBzdHJva2U9IiNGQUFEMTQiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPgogIDxwYXRoIGQ9Ik0xOCAxNlYxNE0xOCAyNlYyNE0yMiAyMEgyNE0xMiAyMEgxNCIgc3Ryb2tlPSIjRkFBRDE0IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz4KPC9zdmc+';
+
+export const IconCondition: React.FC<{ style?: React.CSSProperties }> = ({ style }) => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style={style}
+  >
+    <rect x="4" y="8" width="32" height="24" rx="4" fill="#722ED1" fillOpacity="0.15" stroke="#722ED1" strokeWidth="2" />
+    <path d="M12 16L16 20L12 24" stroke="#722ED1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M18 20H28" stroke="#722ED1" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="23" cy="16" r="2" fill="#722ED1" />
+    <circle cx="23" cy="24" r="2" fill="#722ED1" />
+  </svg>
+);
+
+export const iconConditionBase64 = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB4PSI0IiB5PSI4IiB3aWR0aD0iMzIiIGhlaWdodD0iMjQiIHJ4PSI0IiBmaWxsPSIjNzIyRUQxIiBmaWxsT3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjNzIyRUQxIiBzdHJva2Utd2lkdGg9IjIiIC8+CiAgPHBhdGggZD0iTTEyIDE2TDE2IDIwTDEyIDI0IiBzdHJva2U9IiM3MjJFRDEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiAvPgogIDxwYXRoIGQ9Ik0xOCAyMEgyOCIgc3Ryb2tlPSIjNzIyRUQxIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz4KICA8Y2lyY2xlIGN4PSIyMyIgY3k9IjE2IiByPSIyIiBmaWxsPSIjNzIyRUQxIiAvPgogIDxjaXJjbGUgY3g9IjIzIiBjeT0iMjQiIHI9IjIiIGZpbGw9IiM3MjJFRDEiIC8+Cjwvc3ZnPg==';
+
+export const IconConditionBranch: React.FC<{ style?: React.CSSProperties }> = ({ style }) => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style={style}
+  >
+    <rect x="4" y="8" width="32" height="24" rx="4" fill="#722ED1" fillOpacity="0.1" stroke="#722ED1" strokeWidth="1.5" strokeDasharray="4 4" />
+    <path d="M12 16H18" stroke="#722ED1" strokeWidth="2" strokeLinecap="round" />
+    <path d="M12 20H22" stroke="#722ED1" strokeWidth="2" strokeLinecap="round" />
+    <path d="M12 24H26" stroke="#722ED1" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+export const iconConditionBranchBase64 = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB4PSI0IiB5PSI4IiB3aWR0aD0iMzIiIGhlaWdodD0iMjQiIHJ4PSI0IiBmaWxsPSIjNzIyRUQxIiBmaWxsT3BhY2l0eT0iMC4xIiBzdHJva2U9IiM3MjJFRDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI0IDQiIC8+CiAgPHBhdGggZD0iTTEyIDE2SDE4IiBzdHJva2U9IiM3MjJFRDEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPgogIDxwYXRoIGQ9Ik0xMiAyMEgyMiIgc3Ryb2tlPSIjNzIyRUQxIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz4KICA8cGF0aCBkPSJMTTIgMjRIMjYiIHN0cm9rZT0iIzcyMkVEMSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+Cjwvc3ZnPg==';

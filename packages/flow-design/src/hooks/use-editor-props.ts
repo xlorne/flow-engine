@@ -19,6 +19,8 @@ import { createMinimapPlugin } from '@flowgram.ai/minimap-plugin';
 import { type FlowNodeRegistry } from '../typings';
 import { BaseNode } from '../components/base-node';
 import NodeAdder from '../components/node-adder';
+import BranchAdder from '../components/branch-adder';
+import { ConditionNodeRender } from '../components/condition-node-render';
 import { nodeFormPanelFactory } from '../components/sidebar';
 
 export function useFlowEditorProps(
@@ -43,10 +45,10 @@ export function useFlowEditorProps(
           },
         };
       },
-      fromNodeJSON(node, json) {
+      fromNodeJSON(_node, json) {
         return json;
       },
-      toNodeJSON(node, json) {
+      toNodeJSON(_node, json) {
         return json;
       },
       defaultLayout: FlowLayoutDefault.VERTICAL_FIXED_LAYOUT,
@@ -68,8 +70,13 @@ export function useFlowEditorProps(
         components: {
           ...defaultFixedSemiMaterials,
           [FlowRendererKey.ADDER]: NodeAdder,
+          [FlowRendererKey.BRANCH_ADDER]: BranchAdder,
         },
         renderDefaultNode: BaseNode,
+        // 自定义条件节点的渲染，隐藏父节点容器
+        renderNodes: {
+          condition: ConditionNodeRender,
+        },
       },
       scroll: {
         enableScrollLimit: true,
