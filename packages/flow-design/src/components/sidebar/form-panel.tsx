@@ -59,6 +59,7 @@ export function SidebarRenderer({ nodeId }: NodeFormPanelProps) {
 
   useEffect(() => {
     const toDispose = selection.onSelectionChanged(() => {
+      // 没有选中任何节点时关闭面板（点击空白处）
       if (selection.selection.length === 0) {
         handleClose();
       } else if (selection.selection.length === 1 && selection.selection[0] !== node) {
@@ -98,5 +99,6 @@ export function SidebarRenderer({ nodeId }: NodeFormPanelProps) {
 export const nodeFormPanelFactory: PanelFactory<NodeFormPanelProps> = {
   key: 'node-form-panel',
   defaultSize: 320,
+  keepDOM: false,
   render: (props: NodeFormPanelProps) => <SidebarRenderer {...props} />,
 };

@@ -1,3 +1,3 @@
-import { FlowEditor as FlowDesign } from '@flow-engine/flow-design';
+import { DemoFixedLayout as FlowDesign } from '@flow-engine/fixed-flow-design';
 
 export default FlowDesign ;
